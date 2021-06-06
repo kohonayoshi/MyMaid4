@@ -67,7 +67,7 @@ public class Cmd_Wire extends MyMaidLibrary implements CommandPremise {
                     Triplet.of("x1", "y1", "z1"),
                     Triplet.of(Integer.class, Integer.class, Integer.class), // バニラのようにintで入ってきた場合は+0.5blockし、doubleの場合はそのまま代入するようにしたい
                     (sender, triplet) -> new Vector(triplet.getFirst(), triplet.getSecond(), triplet.getThird()),
-                    ArgumentDescription.of("1つ目のx・y・z座標。リードを付けられている側。")
+                    ArgumentDescription.of("1つ目のx・y・z座標。リードを付けられている側。例:0,64,0")
                 )
                 .argumentTriplet(
                     "pos2",
@@ -75,7 +75,7 @@ public class Cmd_Wire extends MyMaidLibrary implements CommandPremise {
                     Triplet.of("x2", "y2", "z2"),
                     Triplet.of(Integer.class, Integer.class, Integer.class), // バニラのようにintで入ってきた場合は+0.5blockし、doubleの場合はそのまま代入するようにしたい
                     (sender, triplet) -> new Vector(triplet.getFirst(), triplet.getSecond(), triplet.getThird()),
-                    ArgumentDescription.of("2つ目のx・y・z座標。リードを持っている側。")
+                    ArgumentDescription.of("2つ目のx・y・z座標。リードを持っている側。例:1,64,1")
                 )
                 .handler(this::setWire)
                 .build(),
@@ -97,7 +97,7 @@ public class Cmd_Wire extends MyMaidLibrary implements CommandPremise {
                     Triplet.of("x1", "y1", "z1"),
                     Triplet.of(Integer.class, Integer.class, Integer.class), // バニラのようにintで入ってきた場合は+0.5blockし、doubleの場合はそのまま代入するようにしたい
                     (sender, triplet) -> new Vector(triplet.getFirst(), triplet.getSecond(), triplet.getThird()),
-                    ArgumentDescription.of("1つ目のx・y・z座標。どちら側でも良いです。")
+                    ArgumentDescription.of("1つ目のx・y・z座標。どちら側でも良いです。例:0,64,0")
                 )
                 .argumentTriplet(
                     "pos2",
@@ -105,7 +105,7 @@ public class Cmd_Wire extends MyMaidLibrary implements CommandPremise {
                     Triplet.of("x2", "y2", "z2"),
                     Triplet.of(Integer.class, Integer.class, Integer.class), // バニラのようにintで入ってきた場合は+0.5blockし、doubleの場合はそのまま代入するようにしたい
                     (sender, triplet) -> new Vector(triplet.getFirst(), triplet.getSecond(), triplet.getThird()),
-                    ArgumentDescription.of("2つ目のx・y・z座標。どちら側でも良いです。")
+                    ArgumentDescription.of("2つ目のx・y・z座標。どちら側でも良いです。例:1,64,1")
                 )
                 .handler(this::delWire)
                 .build(),
